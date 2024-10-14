@@ -13,10 +13,12 @@ class Bank:
                 + f'Bank credits given: {self._credits_count}')
 
     def __repr__(self):
-        blank = "Bank({}, {}, {})"
-        return blank.format(self._name,
+        blank = "Bank({}, {}, {}, {}, {})"
+        return blank.format(repr(self._name),
                             self._clients_count,
-                            self._credits_count)
+                            self._credits_count,
+                            self.luck,
+                            repr(self.nick_name))
 
     def get_name(self):
         return self._name
@@ -42,11 +44,12 @@ def main():
     bank2 = Bank("Жytomyr", 10, 4)
     bank3 = Bank("Ternopil", 10000000, 5000000000000000000)
     for bank in (bank1, bank2, bank3):
-        print(bank.get_name(),
-              bank.get_clients_count(),
-              bank.get_credits_count(),
-              bank.luck,
-              bank.nick_name, sep='\n')
+        print(repr(bank))
+        # print(bank.get_name(),
+        #       bank.get_clients_count(),
+        #       bank.get_credits_count(),
+        #       bank.luck,
+        #       bank.nick_name, sep='\n')
     print()
 if __name__=='__main__':
     main()
