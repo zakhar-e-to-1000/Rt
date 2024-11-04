@@ -39,17 +39,14 @@ class Bank:
         self._credits_count = credits_count
     def __del__(self):
         print("I think I'm done at this point.")
+
 def main():
     bank1 = Bank("Lviv", 1000, 50)
     bank2 = Bank("Жytomyr", 10, 4)
     bank3 = Bank("Ternopil", 10000000, 5000000000000000000)
     for bank in (bank1, bank2, bank3):
         print(repr(bank))
-        # print(bank.get_name(),
-        #       bank.get_clients_count(),
-        #       bank.get_credits_count(),
-        #       bank.luck,
-        #       bank.nick_name, sep='\n')
     print()
+
 if __name__=='__main__':
     main()
