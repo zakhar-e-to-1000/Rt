@@ -12,6 +12,15 @@ def buble_sort(matrix: list[list[int]]):
     for c in range(len(matrix[0])):
         sort_column(matrix, c)
 
+
+def sort_arguments(func):
+    def wrapper(*args):
+        for arg in args:
+            buble_sort(arg)
+        return func(*args)
+    return wrapper
+
+#@sort_arguments
 def super_quality_NASA_str(matrix):
     c_max = [0]*len(matrix[0])
     for row in matrix:
@@ -36,7 +45,7 @@ def f(matrix, i):
 
 
 def main():
-    matrix = [[-1, -5, -47, -8,  -1],
+    matrix = [[-1, -5, -47, -8,   -1],
               [-4, -98, -90, -45, -78],
               [-3, -2,  -5,  -9,  -4],
               [-8, -67, -33, -91, -40],
@@ -52,4 +61,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
